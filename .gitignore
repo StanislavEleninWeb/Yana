@@ -1,0 +1,16 @@
+artisan
+/bootstrap
+/cache
+composer.phar
+.editorconfig
+.env
+.env.example
+/node_modules
+/public
+/storage
+/vendor
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
