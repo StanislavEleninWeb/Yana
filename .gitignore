@@ -2,6 +2,7 @@ artisan
 /bootstrap
 /cache
 composer.phar
+composer.lock
 .editorconfig
 .env
 .env.example
