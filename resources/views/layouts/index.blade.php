@@ -7,24 +7,24 @@
         <title>@section('title')Laravel@show</title>
 
         @section('css')
-            include('layouts.css.css')
+            @include('layouts.css.css')
         @show
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @section('header')
-                include('layout.header.index')
+                @include('layouts.header.index')
             @show
 
             @yield('content')
         </div>
 
         @section('footer')
-            include('layouts.footer.index')
+            @include('layouts.footer.index')
         @show
 
         @section('js')
-            include('layouts.js.js');
+            @include('layouts.js.js');
         @show
     </body>
 </html>
