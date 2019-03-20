@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
+
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -36,6 +39,12 @@
         position: absolute;
         left: 10px;
         top: 18px;
+    }
+
+    .top-left-down {
+        position: absolute;
+        left: 10px;
+        top: 28px;
     }
 
     .content {

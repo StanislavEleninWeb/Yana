@@ -6,6 +6,9 @@
             <a href="{{ route('admin.category.index') }}">Category</a>
             <a href="{{ route('admin.category.index') }}">Category</a>
             <a href="{{ route('admin.category.index') }}">Category</a>
+
+            @yield('sub_links')
+
         @else
             <a href="{{ route('login') }}">Login</a>
 

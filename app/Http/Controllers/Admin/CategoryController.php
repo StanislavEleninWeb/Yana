@@ -13,10 +13,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Category $category)
     {
         return view('category.admin.index', [
-            'categories' => Category::all()
+            'categories' => $categories->all()
         ]);
     }
 
@@ -25,9 +25,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Category $category)
     {
-        //
+        return view('category.admin.create', [
+            'categories' => $category->all()
+        ]);
     }
 
     /**

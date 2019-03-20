@@ -2,6 +2,13 @@
 
 @section('title', 'Category')
 
+@section('sub_links')
+	<div class="top-left-down links">
+        <a href="{{ route('admin.category.index') }}">List</a>
+        <a href="{{ route('admin.category.create') }}">Create</a>
+    </div>
+@endsection
+
 @section('content')
 	<table>
 		<tr>
