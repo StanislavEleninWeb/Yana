@@ -17,7 +17,7 @@ class Article extends Model
     }
 
     public function category(){
-    	return $this->hasMany('App\Category')
+    	return $this->hasMany('App\Category');
     }
 
     public function comments(){
