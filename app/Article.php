@@ -4,8 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\User;
-
 class Article extends Model
 {
     protected $fillable = [];
@@ -16,6 +14,14 @@ class Article extends Model
 
     public function article_info(){
         return $this->hasOne('App\Article_info');
+    }
+
+    public function category(){
+    	return $this->hasMany('App\Category')
+    }
+
+    public function comments(){
+    	return $this->hasMany('App\Comment');
     }
 
 }

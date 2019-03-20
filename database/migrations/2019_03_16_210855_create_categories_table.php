@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
             $table->unsignedSmallInteger('sortorder')->nullable();
             $table->string('url')->nullable();
+            $table->enum('active', [0,1])->default(0);
             $table->timestamps();
         });
     }

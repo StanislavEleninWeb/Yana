@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Category\StoreCategoryPost;
 
 class CategoryController extends Controller
 {
@@ -38,9 +39,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryPost $request)
     {
-        //
+        $category = Category::create($request->validated());
+
+        return redirect()->route('admin.category.edit', $category->id);
     }
 
     /**
@@ -51,7 +54,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('admin.category.show', compact('category'));
     }
 
     /**
@@ -62,7 +65,10 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('category.admin.edit', [
+            'category' => $category,
+            'categories' => $category->all()
+        ]);
     }
 
     /**
@@ -72,9 +78,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategoryPost $request, Category $category)
     {
-        //
+        $category->update($request->validated());
+
+        return redirect()->back();
     }
 
     /**
@@ -85,6 +93,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->back();
     }
 }
