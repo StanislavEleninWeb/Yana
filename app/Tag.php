@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+
+    protected $fillable = [
+        'tag'
+    ];
+
     /**
     * Get all of the images that are assigned this tag
     */

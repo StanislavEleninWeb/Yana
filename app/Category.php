@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
-    public $fillable = [
+    protected $fillable = [
         'title',
         'parent_id',
         'url',
