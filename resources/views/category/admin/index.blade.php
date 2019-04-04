@@ -20,7 +20,11 @@
 			<td>
 				<a href="{{ route('admin.category.show', $itr->id) }}">Show</a>
 				<a href="{{ route('admin.category.edit', $itr->id) }}">Edit</a>
-				<a href="{{ route('admin.category.destroy', $itr->id) }}">Delete</a>
+				<form action="{{ route('admin.category.destroy', $itr->id) }}" method="POST">
+					@csrf
+					@method('DELETE')
+					<button type="submit">Delete</button>
+				</form>
 			</td>
 		</tr>
 		@endforeach

@@ -6,6 +6,10 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+// Validated Request
+use App\Http\Requests\Category\StoreCategoryPost;
+use App\Http\Requests\Category\EditCategoryPost;
+
 class CategoryController extends Controller
 {
     /**
@@ -38,9 +42,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryPost $request)
     {
-        //
+        $category = Category::create($request->validated());
+
+        return redirect()->route('admin.category.edit', $category->id);
     }
 
     /**
@@ -49,9 +55,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('category.admin.show', compact('category'));
     }
 
     /**
@@ -60,9 +66,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('category.admin.edit', [
+            'category' => $category,
+            'categories' => $category->all()
+        ]);
     }
 
     /**
@@ -72,9 +81,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditCategoryPost $request, Category $category)
     {
-        //
+        $category->update($request->validated());
+
+        return redirect()->back();
     }
 
     /**
@@ -83,8 +94,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->back();
     }
 }
