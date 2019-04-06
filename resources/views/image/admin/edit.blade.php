@@ -4,11 +4,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+
+				@include('layouts.errors.form')
+
 				<form action="{{ route('admin.image.store') }}" method="POST">
 					@csrf
 
 					<div class="form-group">
-						<img src="{{ public_path() }}/images/{{ intval($image->id/1000) }}/{{ $image->file_name }}.{{ $image->file_ext }}">
+						<img src="/images/{{ intval($image->id/1000) }}/{{ $image->file_name }}.{{ $image->file_ext }}">
 					</div>
 
 					<div class="form-group">

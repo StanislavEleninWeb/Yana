@@ -24,7 +24,8 @@ class UpdateImagePost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'author' => 'nullable|min:2|max:191',
+            'title' => 'nullable|min:2|max:191'
         ];
     }
 }

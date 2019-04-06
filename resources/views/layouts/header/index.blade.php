@@ -14,6 +14,9 @@
     </div>
 @endif
 
+@include('layouts.errors.massage')
+@include('layouts.success.massage')
+
 
 
 	

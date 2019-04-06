@@ -91,11 +91,11 @@ class ImageController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreImagePost $request, Image $image)
+    public function update(UpdateImagePost $request, Image $image)
     {
         $image->update($request->validated());
 
-        return redirect()->back();
+        return back()->with('success', 'Successfully updated!');
     }
 
     /**
