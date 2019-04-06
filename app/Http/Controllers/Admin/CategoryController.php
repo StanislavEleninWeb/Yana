@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 // Validated Request
 use App\Http\Requests\Category\StoreCategoryPost;
-use App\Http\Requests\Category\EditCategoryPost;
+use App\Http\Requests\Category\UpdateCategoryPost;
 
 class CategoryController extends Controller
 {
@@ -81,7 +81,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EditCategoryPost $request, Category $category)
+    public function update(UpdateCategoryPost $request, Category $category)
     {
         $category->update($request->validated());
 

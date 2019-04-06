@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Comment;
+namespace App\Http\Requests\Image;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCommentPost extends FormRequest
+class UpdateImagePost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -4,6 +4,7 @@
             <a href="{{ route('admin.category.index') }}">Category</a>
             <a href="{{ route('admin.comment.index') }}">Comment</a>
             <a href="{{ route('admin.tag.index') }}">Tag</a>
+            <a href="{{ route('admin.image.index') }}">Image</a>
             
             @yield('sub_links')
 

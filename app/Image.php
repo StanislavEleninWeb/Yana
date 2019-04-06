@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+
+    protected $fillable = [
+        'file_name',
+        'file_ext',
+        'author',
+        'title',
+    ];
+
     /**
      * Get all of the tags for the post.
      */
