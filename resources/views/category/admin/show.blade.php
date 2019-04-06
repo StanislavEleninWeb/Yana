@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<table>
+				<table class="table">
 					<tr>
 						<td>ID</td>
 						<td>{{ $category->id }}</td>
@@ -39,9 +39,9 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="{{ route('admin.category.edit', $category->id) }}">Edit</a>
+							<a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-md">Edit</a>
 						</td>
-						<td><a href="{{ route('admin.category.index') }}">Back</a></td>
+						<td><a href="{{ route('admin.category.index') }}" class="btn btn-md">Back</a></td>
 					</tr>
 				</table>
 			</div>

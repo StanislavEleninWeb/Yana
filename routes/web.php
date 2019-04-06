@@ -19,4 +19,6 @@ Route::middleware(['auth'])->namespace('Admin')->name('admin.')->group(function(
 	Route::resource('/admin', 'HomeController')->only('index');
 	Route::resource('/admin/category', 'CategoryController');
 	Route::resource('/admin/tag', 'TagController');
+	Route::resource('/admin/comment', 'CommentController');
+	
 });

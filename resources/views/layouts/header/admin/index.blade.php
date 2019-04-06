@@ -2,11 +2,9 @@
     <div class="top-left links">
         @auth
             <a href="{{ route('admin.category.index') }}">Category</a>
-            <a href="{{ route('admin.category.index') }}">Category</a>
-            <a href="{{ route('admin.category.index') }}">Category</a>
-            <a href="{{ route('admin.category.index') }}">Category</a>
-            <a href="{{ route('admin.category.index') }}">Category</a>
-
+            <a href="{{ route('admin.comment.index') }}">Comment</a>
+            <a href="{{ route('admin.tag.index') }}">Tag</a>
+            
             @yield('sub_links')
 
         @else
