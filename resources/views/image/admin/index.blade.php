@@ -7,6 +7,7 @@
 				<table class="table">
 					<tr>
 						<td>ID</td>
+						<td></td>
 						<td>Name</td>
 						<td>Ext</td>
 						<td>Author</td>
@@ -20,6 +21,9 @@
 					@foreach($images as $itr)
 						<tr>
 							<td>{{ $itr->id }}</td>
+							<td>
+								<img src="{{ asset('/images/' . (int) ($itr->id/1000) . '/' . $itr->file_name . '.' . $itr->file_ext) }}" alt="{{ $itr->title }}" title="{{ $itr->title }}" class="image image-responsive">
+							</td>
 							<td>{{ $itr->file_name }}</td>
 							<td>{{ $itr->file_ext }}</td>
 							<td>{{ $itr->author }}</td>

@@ -7,7 +7,7 @@
 				<table class="table table-condensed">
 					<tr>
 						<td>
-							<img src="">
+							<img src="{{ asset('/images/' . (int) ($image->id/1000) . '/' . $image->file_name . '.' . $image->file_ext) }}" alt="{{ $image->title }}" title="{{ $image->title }}" class="image image-responsive">
 						</td>
 					</tr>
 					<tr>
