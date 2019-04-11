@@ -1,4 +1,4 @@
-@if($errors->has())
+@if($errors->has('errors'))
     <div class="alert alert-success">
         <ul>
             @foreach ($errors->all() as $error)
