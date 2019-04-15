@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-class GalleryController extends Controller
+class GalleryController extends ObjectController
 {
     
 }

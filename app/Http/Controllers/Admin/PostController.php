@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-class PostController extends ArticleController
+class PostController extends ObjectController
 {
     
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-class PoetryController extends ArticleController
+class PoetryController extends ObjectController
 {
     
 }
