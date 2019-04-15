@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Gallery as Model;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class GalleryController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        return view('article.admin.index', [
+            ''
+        ]);
     }
 
     /**
@@ -41,10 +43,10 @@ class GalleryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Gallery  $gallery
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function show($id)
     {
         //
     }
@@ -52,10 +54,10 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Gallery  $gallery
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $gallery)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +66,10 @@ class GalleryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Gallery  $gallery
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +77,10 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Gallery  $gallery
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($id)
     {
         //
     }
