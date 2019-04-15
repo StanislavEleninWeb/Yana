@@ -8,14 +8,26 @@ use App\Http\Controllers\Controller;
 class ArticleController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $routeArray = request()->route()->getAction();
+        list($this->controllerName, $this->action) = explode('@', class_basename($routeArray['controller']));
+        list($this->controller) = explode('Controller', $this->controllerName);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('article.admin.index', [
-            ''
+        return view('article.admin.'.$this->action, [
+            '' => ('App\\'.$this->controller)::all()
         ]);
     }
 

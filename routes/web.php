@@ -21,4 +21,9 @@ Route::middleware(['auth'])->namespace('Admin')->name('admin.')->group(function(
 	Route::resource('/admin/tag', 'TagController');
 	Route::resource('/admin/comment', 'CommentController');
 	Route::resource('/admin/image', 'ImageController');
+	Route::resource('/admin/article', 'ArticleController');
+	Route::resource('/admin/post', 'PostController');
+	Route::resource('/admin/poetry', 'PoetryController');
+	Route::resource('/admin/gallery', 'GalleryController');
+	Route::resource('/admin/video', 'VideoController');
 });
