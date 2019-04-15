@@ -26,8 +26,9 @@ class ObjectController extends Controller
      */
     public function index()
     {
-        return view('article.admin.'.$this->action, [
-            'objects' => ('App\\'.$this->controller)::all()
+        return view('object.admin.index', [
+            'objects' => ('App\\'.$this->controller)::all(),
+            'controller' => $this->controller
         ]);
     }
 
@@ -38,7 +39,7 @@ class ObjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('object.admin.create');
     }
 
     /**
@@ -49,7 +50,7 @@ class ObjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $object = '';
     }
 
     /**
