@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ArticleController extends Controller
+class ObjectController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -27,7 +27,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('article.admin.'.$this->action, [
-            '' => ('App\\'.$this->controller)::all()
+            'objects' => ('App\\'.$this->controller)::all()
         ]);
     }
 
