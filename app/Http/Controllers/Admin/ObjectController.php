@@ -28,7 +28,7 @@ class ObjectController extends Controller
     {
         return view('object.admin.index', [
             'objects' => ('App\\'.$this->controller)::all(),
-            'controller' => $this->controller
+            'controller' => strtolower($this->controller)
         ]);
     }
 
@@ -39,7 +39,9 @@ class ObjectController extends Controller
      */
     public function create()
     {
-        return view('object.admin.create');
+        return view('object.admin.create', [
+            'controller' => strtolower($this->controller)
+        ]);
     }
 
     /**
