@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Object\StoreObjectPost;
 
 class ObjectController extends Controller
 {
@@ -27,8 +28,8 @@ class ObjectController extends Controller
     public function index()
     {
         return view('object.admin.index', [
+            'controller' => strtolower($this->controller),
             'objects' => ('App\\'.$this->controller)::all(),
-            'controller' => strtolower($this->controller)
         ]);
     }
 
@@ -50,9 +51,11 @@ class ObjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreObjectPost $request)
     {
-        $object = '';
+        $validated = $request->validated();
+
+        dd($validated);
     }
 
     /**
@@ -63,7 +66,10 @@ class ObjectController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('object.admin.show', [
+            'controller' => strtolower($this->controller),
+            'object' => ('App\\'.$this->controller)::find($id)
+        ]);
     }
 
     /**
@@ -74,7 +80,10 @@ class ObjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('object.admin.edit', [
+            'controller' => strtolower($this->controller),
+            'object' => ('App\\'.$this->controller)::find($id)
+        ]);
     }
 
     /**
